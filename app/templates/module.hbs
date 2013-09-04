@@ -1,0 +1,12 @@
+<div class="navbar row">
+  <ul id="submodule-nav" class="nav">
+    {{#each submodules}}
+      <li>
+        {{#link-to "submodule" this }}
+          {{view.isActive}}{{name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+{{outlet}}

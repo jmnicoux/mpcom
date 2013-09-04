@@ -1,0 +1,52 @@
+
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="brand" href="#">
+      <span class="logo logoMoodColor">MOOD</span><span class="logo dot">:</span><span class="sublogo logoMoodColor">MPCOM</span>
+    </a>
+    <ul class="nav">
+      {{#each}}
+        <li>
+          {{#link-to "module" this currentWhen="module"}}
+
+            {{name}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="container">
+
+  <div class="hero-unit">
+    current track (audio player here)
+  </div>
+
+
+  <div class="row">
+
+    <div id="unit-details" class="span3">
+      <h3 class="box">Unit details</h3>
+      <div class="box">
+        <ul>
+          <li>blabla 1</li>
+          <li>blabla 2</li>
+          <li>blabla 3</li>
+          <li>blabla 4</li>
+          <li>blabla 5</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="span9">
+      {{outlet loading}}
+      {{outlet}}
+    </div>
+
+  </div>
+
+</div>
