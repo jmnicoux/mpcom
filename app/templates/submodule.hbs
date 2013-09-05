@@ -1,6 +1,11 @@
-<div id="submodule">
-  <h3 class="box">{{name}}</h3>
-  <div class="box">
-    blabla
-  </div>
+<div id="submodule"><h3 class="box">{{name}}
+  {{#each elements}}
+    {{#link-to "element" this }}
+      {{name}}
+    {{/link-to}}
+  {{/each}}</h3>
 </div>
+{{outlet}}
+
+  
+

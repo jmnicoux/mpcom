@@ -1,7 +1,8 @@
 App.Submodule.FIXTURES = [
   {
     "id": "programs",
-    "name": "Programs"
+    "name": "Programs",
+    "elements": [ "allPrograms", "zone1", "zone2" ]
   }, {
     "id": "baskets",
     "name": "Baskets"
