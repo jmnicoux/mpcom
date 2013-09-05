@@ -1,5 +1,9 @@
 var App = window.App = Em.Application.create({
-   LOG_TRANSITIONS: true
+   //LOG_TRANSITIONS: true
+});
+
+Ember.Handlebars.helper('dynPartial', function(name, options) {
+  return Ember.Handlebars.helpers.partial.apply(this, arguments);
 });
 
 App.AccordionGroupComponent = Ember.Component.extend({
@@ -13,7 +17,7 @@ App.AccordionGroupComponent = Ember.Component.extend({
   },
   didInsertElement: function() {
     //this.$('.accordion-inner').hide();
-    console.log('!!!', this, this.templateName );
+    //console.log('!!!', this, this.templateName );
   }
 });
 

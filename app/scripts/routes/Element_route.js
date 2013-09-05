@@ -1,7 +1,7 @@
 App.ElementRoute = Em.Route.extend({
 
   model: function(params, transition) {
-    console.log(params)
+    //console.log(params)
     return this.store.find('element', params.element_id).then(function (element) {
       return element;
     });
