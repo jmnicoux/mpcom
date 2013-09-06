@@ -1,7 +1,7 @@
 App.Router.map(function() {
   this.resource('music', function() {
     this.resource('programs', function() {
-      this.resource('program', { path: '/:program_id' });
+      this.resource('program', { path: ':program_id' });
     });
     this.resource('baskets', function() {
       this.resource('basket', { path: '/:basket_id' });

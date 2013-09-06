@@ -27,6 +27,10 @@ App.MusicRoute = Em.Route.extend({
     navTo: function (destination) {
       console.log('music dest', destination);
       this.transitionTo(destination);
+    },
+    subNavTo: function (destination) {
+      console.log('subnav dest', destination);
+      this.transitionTo('program', destination);
     }
   }
 });
