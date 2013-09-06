@@ -3,14 +3,3 @@
     {{name}}
   </h3>
 </div>
-
-{{dynPartial this.id}}
-{{#each item in elements}}
-  {{#accordion-group name=item.name}}
-      {{dynPartial item.id}}
-      {{outlet}}
-  {{/accordion-group}}
-{{/each}}
-
-
-

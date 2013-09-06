@@ -6,6 +6,18 @@ Ember.Handlebars.helper('dynPartial', function(name, options) {
   return Ember.Handlebars.helpers.partial.apply(this, arguments);
 });
 
+Ember.Handlebars.helper('dynLinkTo', function(name) {
+  return Ember.Handlebars.helpers.linkTo.apply(this, arguments);
+});
+
+Ember.Handlebars.helper('dynView', function(name, options) {
+  var newName = 'App.'+name.capitalize()+'View';
+  arguments[0] = newName;
+  console.log('new!!!', arguments, options);
+  return Ember.Handlebars.helpers.view.apply(this, arguments);
+});
+
+
 App.AccordionGroupComponent = Ember.Component.extend({
   classNames: [
     'accordion-group'

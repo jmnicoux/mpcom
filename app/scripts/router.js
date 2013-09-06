@@ -17,8 +17,8 @@ App.Router.map(function() {
     this.resource('events', function() {
       this.resource('event', { path: '/:event_id' });
     });
-    this.resource('tracks', function() {
-      this.resource('track', { path: '/:track_id' });
+    this.resource('adtracks', function() {
+      this.resource('adtrack', { path: '/:track_id' });
     });
   });
 });
