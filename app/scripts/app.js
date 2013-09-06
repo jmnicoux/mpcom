@@ -16,7 +16,7 @@ App.AccordionGroupComponent = Ember.Component.extend({
     }
   },
   didInsertElement: function() {
-    //this.$('.accordion-inner').hide();
+    this.$('.accordion-inner').hide();
     //console.log('!!!', this, this.templateName );
   }
 });

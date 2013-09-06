@@ -1,17 +1,16 @@
-<div id="submodule"><h3 class="box">{{name}}
-  {{#each elements}}
-    {{#link-to "element" this }}
-      {{name}} 
-    {{/link-to}}
-  {{/each}} </h3>
+<div id="submodule">
+  <h3 class="box">
+    {{name}}
+  </h3>
 </div>
 
-
-{{#each elements}}
-  {{#accordion-group contentBinding="content" linkerBinding=this name=this.name hidden=true}}
-      {{dynPartial this.id}}
+{{dynPartial this.id}}
+{{#each item in elements}}
+  {{#accordion-group name=item.name}}
+      {{dynPartial item.id}}
+      {{outlet}}
   {{/accordion-group}}
 {{/each}}
 
-  
+
 

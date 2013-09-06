@@ -7,11 +7,8 @@
     </a>
     <ul class="nav">
       {{#each}}
-        <li>
-          {{#link-to "module" this currentWhen="module"}}
-
-            {{name}}
-          {{/link-to}}
+        <li {{action "navTo" this.id}} >
+          <a>{{name}}</a>
         </li>
       {{/each}}
     </ul>
