@@ -6,8 +6,8 @@
       <span class="logo logoMoodColor">MOOD</span><span class="logo dot">:</span><span class="sublogo logoMoodColor">MPCOM</span>
     </a>
     <ul class="nav">
-      {{#each}}
-        <li {{action "navTo" this.id}} >
+      {{#each }}
+        <li {{action "navTo" this.id this}} >
           <a>{{name}}</a>
         </li>
       {{/each}}

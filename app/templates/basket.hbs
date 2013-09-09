@@ -1,0 +1,9 @@
+<h3 class="box">
+  {{name}}
+</h3>
+
+{{#each item in tracks}}
+  <div {{action "navToTrack" item.id}}>
+    track : {{item.name}}
+  </div>
+{{/each}}

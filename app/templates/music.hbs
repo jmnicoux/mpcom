@@ -1,8 +1,8 @@
 <div class="navbar row">
   <ul id="submodule-nav" class="nav">
-    {{#each item in controller}}
-        <li {{action "navTo" item.id}} >
-          <a>{{item.name}}</a>
+    {{#each }}
+        <li {{action "navTo" this.id}} >
+          <a>{{name}}</a>
         </li>
     {{/each}}
   </ul>

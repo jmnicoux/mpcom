@@ -6,8 +6,10 @@ Ember.Handlebars.helper('dynPartial', function(name, options) {
   return Ember.Handlebars.helpers.partial.apply(this, arguments);
 });
 
-Ember.Handlebars.helper('dynLinkTo', function(name) {
-  return Ember.Handlebars.helpers.linkTo.apply(this, arguments);
+
+Ember.Handlebars.helper('dynLinkTo', function(name, options) {
+  console.log(name, options, arguments)
+  return Ember.Handlebars.helpers.linkTo.apply(arguments);
 });
 
 Ember.Handlebars.helper('dynView', function(name, options) {
