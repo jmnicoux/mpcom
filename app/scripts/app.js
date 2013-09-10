@@ -1,5 +1,5 @@
 var App = window.App = Em.Application.create({
-   //LOG_TRANSITIONS: true
+   LOG_TRANSITIONS: true
 });
 
 Ember.Handlebars.helper('dynPartial', function(name, options) {

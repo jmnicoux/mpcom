@@ -3,7 +3,7 @@
 </h3>
 
 {{#each item in tracks}}
-  <div {{action "navToTrack" item.id}}>
+  <div {{action "navToTrack" item.id}} class="box">
     track : {{item.name}}
   </div>
 {{/each}}

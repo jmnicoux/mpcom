@@ -1,1 +1,2 @@
-App.ModuleController = Em.ObjectController.extend();
+App.ModulesController = Em.ArrayController.extend();
+App.ModuleController = Em.ArrayController.extend();

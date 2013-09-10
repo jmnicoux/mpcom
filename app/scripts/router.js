@@ -21,4 +21,22 @@ App.Router.map(function() {
       this.resource('adtrack', { path: '/:track_id' });
     });
   });
+  this.resource('settings', function() {
+    this.resource('eeproms', function() {
+      this.resource('eeprom', { path: '/:eeprom_id' });
+    });
+    this.resource('date');
+  });
+  this.resource('maintenance', function() {
+    this.resource('dignostics', function() {
+      this.resource('dignostic', { path: '/:diagnostic_id' });
+    });
+    this.resource('update');
+  });
+  this.resource('help', function() {
+    this.resource('docs', function() {
+      this.resource('doc', { path: '/:doc_id' });
+    });
+    this.resource('contacts');
+  });
 });

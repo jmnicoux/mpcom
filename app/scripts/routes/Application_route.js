@@ -9,6 +9,7 @@ App.ApplicationRoute = Em.Route.extend({
 
   actions: {
     error: function() {
+      console.log('app route pb!');
       this.transitionTo('index');
     },
     navTo: function (destination) {

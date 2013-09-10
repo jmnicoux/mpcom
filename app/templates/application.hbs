@@ -7,10 +7,12 @@
     </a>
     <ul class="nav">
       {{#each }}
-        <li {{action "navTo" this.id this}} >
-          <a>{{name}}</a>
-        </li>
-      {{/each}}
+      <li>
+        {{#link-to this.id }}
+          {{name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
     </ul>
   </div>
 </div>

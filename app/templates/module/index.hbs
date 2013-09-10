@@ -1,5 +1,12 @@
-<div id="submodule">
-  <h3 class="box alert">
-    please select one of  above submodules
-  </h3>
+<div class="navbar row">
+  <ul id="submodule-nav" class="nav">
+    {{#each }}
+      <li>
+        {{#link-to this.id }}
+          {{name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
 </div>
+{{outlet module}}
