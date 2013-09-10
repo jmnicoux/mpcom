@@ -1,13 +1,24 @@
 App.Submodule.FIXTURES = [
   {
+    "id": "playlist",
+    "name": "Playlist"
+  }, {
     "id": "programs",
-    "name": "Programs",
-    "elements": [ "allPrograms", "zone1", "zone2" ]
+    "name": "Programs"
   }, {
     "id": "baskets",
     "name": "Baskets"
   }, {
     "id": "tracks",
+    "name": "Tracks"
+  }, {
+    "id": "planning",
+    "name": "today's Planning"
+  }, {
+    "id": "mssiis",
+    "name": "configuration files"
+  }, {
+    "id": "adsTracks",
     "name": "Tracks"
   }, {
     "id": "adverts",
@@ -47,3 +58,5 @@ App.Submodule.FIXTURES = [
     "name": "contact"
   }
 ];
+
+["planning", "mssiis", "adsTracks"]

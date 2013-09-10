@@ -1,0 +1,14 @@
+<h3 class="box">
+  {{name}}
+</h3>
+
+{{#each prgLines}}
+  <div class="box">
+    {{#each basket}} 
+      <span {{action "navToBasket" this}}>
+        {{name}} 
+      </span>
+    {{/each}} : 
+    {{properties}}
+  </div>
+{{/each}}

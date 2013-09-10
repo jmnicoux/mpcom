@@ -2,11 +2,11 @@ App.Module.FIXTURES = [
   {
     "id": "music",
     "name": "Music",
-    "submodules": ["programs", "baskets", "tracks"]
+    "submodules": ["playlist", "programs", "baskets", "tracks"]
   }, {
     "id": "ads",
     "name": "Ads",
-    "submodules": ["adverts", "events", "locals", "adcom", "openClose", "allAdsTracks"]
+    "submodules": ["planning", "mssiis", "adsTracks"]
   }, {
     "id": "settings",
     "name": "Settings",

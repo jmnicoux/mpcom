@@ -1,0 +1,9 @@
+<h3 class="box">
+  {{name}}
+</h3>
+
+{{#each tracks}}
+  <div {{action "navToTrack" this}} class="box">
+    track : {{name}}
+  </div>
+{{/each}}

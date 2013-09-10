@@ -1,0 +1,9 @@
+<h3 class="box">
+  Music baskets list
+</h3>
+
+{{#each }}
+  <div {{action "subNavTo" this}} class="box">
+    {{name}}
+  </div>
+{{/each}}
