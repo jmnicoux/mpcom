@@ -133,3 +133,35 @@ App.TrackRoute = Em.Route.extend({
   }
 });
 
+
+
+App.MssiisRoute = Em.Route.extend({
+  model: function(params, transition) {
+    return this.store.findAll('mssii').then(function (mssiis) {
+      return mssiis;
+    });
+  },
+  actions: {
+    error: function() {
+      this.transitionTo('index');
+    },
+    subNavTo: function (destination) {
+      this.transitionTo('mssii', destination);
+    }
+  }
+});
+
+App.MssiisIndexRoute = App.MssiisRoute.extend();
+
+App.MssiiRoute = Em.Route.extend({
+  model: function(params, transition) {
+    return this.store.find('mssii', params.mssii_id ).then(function (mssii) {
+      return mssii;
+    });
+  },
+  actions: {
+    error: function() {
+      this.transitionTo('index');
+    }
+  }
+});

@@ -18,6 +18,6 @@ App.Module.FIXTURES = [
   }, {
     "id": "help",
     "name": "Help",
-    "submodules": ["doc", "contact"]
+    "submodules": ["docs", "contacts"]
   }
 ];

@@ -84,3 +84,23 @@ App.Track.FIXTURES = [
     "name": "fake track 9"
   }
 ];
+
+
+App.Mssii.FIXTURES = [
+  {
+    "id": "regular",
+    "name": "regular"
+  }, {
+    "id": "events",
+    "name": "events"
+  }, {
+    "id": "openClose",
+    "name": "open/close"
+  }, {
+    "id": "adcom",
+    "name": "adcom"
+  }, {
+    "id": "locals",
+    "name": "locals"
+  }
+];

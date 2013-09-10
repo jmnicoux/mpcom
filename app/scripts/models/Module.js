@@ -24,3 +24,9 @@ App.Basket = DS.Model.extend({
 App.Track = DS.Model.extend({
   name: DS.attr('string')
 });
+
+
+
+App.Mssii = DS.Model.extend({
+  name: DS.attr('string')
+});

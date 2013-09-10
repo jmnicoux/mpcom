@@ -21,24 +21,6 @@ App.Submodule.FIXTURES = [
     "id": "adsTracks",
     "name": "Tracks"
   }, {
-    "id": "adverts",
-    "name": "Adverts"
-  }, {
-    "id": "events",
-    "name": "Events"
-  }, {
-    "id": "locals",
-    "name": "Locals"
-  }, {
-    "id": "adcom",
-    "name": "Adcom"
-  }, {
-    "id": "openClose",
-    "name": "Open/close"
-  }, {
-    "id": "allAdsTracks",
-    "name": "All tracks"
-  }, {
     "id": "eeprom",
     "name": "Eeprom"
   }, {
@@ -51,12 +33,10 @@ App.Submodule.FIXTURES = [
     "id": "update",
     "name": "Update"
   }, {
-    "id": "doc",
+    "id": "docs",
     "name": "Documentation"
   }, {
-    "id": "contact",
-    "name": "contact"
+    "id": "contacts",
+    "name": "contacts"
   }
 ];
-
-["planning", "mssiis", "adsTracks"]

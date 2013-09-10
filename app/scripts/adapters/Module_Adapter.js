@@ -7,4 +7,5 @@ App.PrgLineAdapter = DS.FixtureAdapter.extend();
 App.BasketAdapter = DS.FixtureAdapter.extend();
 App.TrackAdapter = DS.FixtureAdapter.extend();
 
+App.MssiiAdapter = DS.FixtureAdapter.extend();
 

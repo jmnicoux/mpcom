@@ -22,5 +22,17 @@ App.Router.map(function() {
       this.resource('adsTrack', { path: '/:adsTrack_id' });
     });
 
+    //settings
+    this.resource('eeprom');
+    this.resource('date')
+
+    //maintenance
+    this.resource('diagnostic');
+    this.resource('update')
+
+    //help
+    this.resource('docs');
+    this.resource('contacts')
+
   });
 });
