@@ -6,11 +6,10 @@
       <span class="logo logoMoodColor">MOOD</span><span class="logo dot">:</span><span class="sublogo logoMoodColor">MPCOM</span>
     </a>
     <ul class="nav">
-      {{#each}}
+      {{#each module in controller}}
         <li>
-          {{#link-to "module" this currentWhen="module"}}
-
-            {{name}}
+          {{#link-to "module" module.id}}
+            {{module.name}}
           {{/link-to}}
         </li>
       {{/each}}
@@ -23,7 +22,7 @@
 <div class="container">
 
   <div class="hero-unit">
-    current track (or audio player here)
+    current track (audio player here)
   </div>
 
 
@@ -31,7 +30,18 @@
 
     <div id="unit-details" class="row span3">
       <h3 class="box">Unit details</h3>
+
       <div class="box">
+
+        <div class="row">
+          <div class="span span1">
+            <img src="http://placehold.it/60x60">
+          </div>
+          <div class="span span1 playlist-line-element">
+            MP7XXXXX
+          </div>
+        </div>
+
         <h4 class="span2 pull-right">
           {{#link-to "module" 'music'}}
               music
@@ -41,15 +51,21 @@
           <div class="span span1">
             programs
           </div>
-          <div class="span span1 pull-right">3</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">3</div>
+          </div>
         </div>
         <div class="row">
           <div class="span span1">baskets</div>
-          <div class="span span1 pull-right">3</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">3</div>
+          </div>
         </div>
         <div class="row">
           <div class="span span1">tracks</div>
-          <div class="span span1 pull-right">9</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">637</div>
+          </div>
         </div>
 
         <h4 class="span2 pull-right">
@@ -59,22 +75,32 @@
         </h4>
         <div class="row">
           <div class="span span1">regular</div>
-          <div class="span span1 pull-right">5</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">5</div>
+          </div>
         </div>
         <div class="row">
           <div class="span span1">events</div>
-          <div class="span span1 pull-right">2</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">2</div>
+          </div>
         </div>
         <div class="row">
           <div class="span span1">open/close</div>
-          <div class="span span1 pull-right">4</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">4</div>
+          </div>
         </div><div class="row">
           <div class="span span1">adcom</div>
-          <div class="span span1 pull-right">0</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">0</div>
+          </div>
         </div>
         <div class="row">
           <div class="span span1">local</div>
-          <div class="span span1 pull-right">1</div>
+          <div class="span span1 pull-right">
+            <div class="span badge">1</div>
+          </div>
         </div>
 
         <h4 class="span2">last update</h4>

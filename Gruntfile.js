@@ -5,7 +5,8 @@ var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
-
+var httpProxy = require('http-proxy');
+var proxy = new httpProxy.RoutingProxy();
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -63,12 +64,26 @@ module.exports = function (grunt) {
             options: {
                 port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '127.0.0.1'
             },
             livereload: {
                 options: {
                     middleware: function (connect) {
-                        return [
+                        return [function(req, res, next) {
+                              var url = require('url').parse(req.url);
+                              if (
+                                url.path.search('/modules') >= 0 ||
+                                url.path.search('/submodules') >= 0 ||
+                                url.path.search('/programs') >= 0
+                              ) {
+                                proxy.proxyRequest(req, res, {
+                                  host: '127.0.0.1',
+                                  port: '3000'
+                                });
+                                return undefined;
+                              }
+                              return next();
+                            },
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, yeomanConfig.app)
@@ -98,7 +113,7 @@ module.exports = function (grunt) {
         },
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                path: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>'
             }
         },
         clean: {
@@ -335,6 +350,7 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run([
+            'apiServer',
             'clean:server',
             'concurrent:server',
             'neuter:app',
@@ -370,4 +386,9 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    grunt.registerTask('apiServer', 'Start a API web server', function() {
+      grunt.log.writeln('Started API web server on port 3000');
+      require('./app/api/server.js').listen(3000);
+    });
 };

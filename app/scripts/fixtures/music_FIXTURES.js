@@ -1,86 +1,96 @@
 App.Program.FIXTURES = [
   {
-    "id": "fakeProgramA",
+    "id": "fake_program_a",
     "name": "fake Program A",
-    "prgLines": ["fakeProgramA1", "fakeProgramA2", "fakeProgramA3"]
+    "prgLines": ["fake_program_a1", "fake_program_a2", "fake_program_a3"]
   }, {
-    "id": "fakeProgramB",
+    "id": "fake_program_b",
     "name": "fake Program B",
-    "prgLines": ["fakeProgramB1", "fakeProgramB2"]
+    "prgLines": ["fake_program_b1", "fake_program_b2"]
   }, {
-    "id": "fakeProgramC",
+    "id": "fake_program_c",
     "name": "fake Program C",
-    "prgLines": ["fakeProgramC1"]
+    "prgLines": ["fake_program_c1"]
   }
 ];
 
 App.PrgLine.FIXTURES = [
   {
-    "id": "fakeProgramA1",
+    "id": "fake_program_a1",
     "basketName" : "fake basket 1",
-    "basket" : ["fakeBasket1"],
+    "basket" : ["fake_basket1"],
     "properties": "blabla 1"
   }, {
-    "id": "fakeProgramA2",
+    "id": "fake_program_a2",
     "basketName" : "fake basket 2",
-    "basket" : ["fakeBasket2"],
+    "basket" : ["fake_basket2"],
     "properties": "blabla 2"
   }, {
-    "id": "fakeProgramA3",
+    "id": "fake_program_a3",
     "basketName" : "fake basket 3",
-    "basket" : ["fakeBasket3"],
+    "basket" : ["fake_basket3"],
     "properties": "blabla 3"
+  }, {
+    "id": "fake_program_b1",
+    "basketName" : "fake basket 2",
+    "basket" : ["fake_basket2"],
+    "properties": "blabla b1"
+  }, {
+    "id": "fake_program_b2",
+    "basketName" : "fake basket 3",
+    "basket" : ["fake_basket3"],
+    "properties": "blabla b2"
   }
 ];
 
 App.Basket.FIXTURES = [
   {
-    "id": "fakeBasket1",
+    "id": "fake_basket1",
     "name": "fake basket 1",
-    "tracks": ["MMFR00000001", "MMFR00000003"]
+    "tracks": ["mmfr00000001", "mmfr00000003"]
   }, {
-    "id": "fakeBasket2",
+    "id": "fake_basket2",
     "name": "fake basket 2",
-    "tracks": ["MMFR00000002", "MMFR00000005"]
+    "tracks": ["mmfr00000002", "mmfr00000005"]
   }, {
-    "id": "fakeBasket3",
+    "id": "fake_basket3",
     "name": "fake basket 3",
-    "tracks": ["MMFR00000001", "MMFR00000002", "MMFR00000003"]
+    "tracks": ["mmfr00000001", "mmfr00000002", "mmfr00000003"]
   }, {
-    "id": "fakeBasket4",
+    "id": "fake_basket4",
     "name": "fake basket 4",
-    "tracks": ["MMFR00000006", "MMFR00000007", "MMFR00000008", "MMFR00000009"]
+    "tracks": ["mmfr00000006", "mmfr00000007", "mmfr00000008", "mmfr00000009"]
   }
 ];
 
 
 App.Track.FIXTURES = [
   {
-    "id": "MMFR00000001",
+    "id": "mmfr00000001",
     "name": "fake track 1"
   }, {
-    "id": "MMFR00000002",
+    "id": "mmfr00000002",
     "name": "fake track 2"
   }, {
-    "id": "MMFR00000003",
+    "id": "mmfr00000003",
     "name": "fake track 3"
   }, {
-    "id": "MMFR00000004",
+    "id": "mmfr00000004",
     "name": "fake track 4"
   }, {
-    "id": "MMFR00000005",
+    "id": "mmfr00000005",
     "name": "fake track 5"
   }, {
-    "id": "MMFR00000006",
+    "id": "mmfr00000006",
     "name": "fake track 6"
   }, {
-    "id": "MMFR00000007",
+    "id": "mmfr00000007",
     "name": "fake track 7"
   }, {
-    "id": "MMFR00000008",
+    "id": "mmfr00000008",
     "name": "fake track 8"
   }, {
-    "id": "MMFR00000009",
+    "id": "mmfr00000009",
     "name": "fake track 9"
   }
 ];
@@ -94,7 +104,7 @@ App.Mssii.FIXTURES = [
     "id": "events",
     "name": "events"
   }, {
-    "id": "openClose",
+    "id": "open_close",
     "name": "open/close"
   }, {
     "id": "adcom",

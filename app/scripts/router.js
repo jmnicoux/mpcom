@@ -1,5 +1,5 @@
 App.Router.map(function() {
-  this.resource('module', { path: '/:module_id' }, function() {
+ this.resource('module', { path: '/:module_id' }, function() {
 
     //music
     this.resource('playlist');
@@ -24,15 +24,18 @@ App.Router.map(function() {
 
     //settings
     this.resource('eeprom');
-    this.resource('date')
+    this.resource('network');
+    this.resource('date');
+    this.resource('misc');
+    this.resource('audio');
 
     //maintenance
     this.resource('diagnostic');
-    this.resource('update')
+    this.resource('update');
 
     //help
     this.resource('docs');
-    this.resource('contacts')
+    this.resource('contacts');
 
   });
 });

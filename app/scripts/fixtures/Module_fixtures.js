@@ -10,7 +10,7 @@ App.Module.FIXTURES = [
   }, {
     "id": "settings",
     "name": "Settings",
-    "submodules": ["eeprom", "date"]
+    "submodules": ["eeprom", "network", "date", "misc", "audio"]
   }, {
     "id": "maintenance",
     "name": "Maintenance",

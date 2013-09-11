@@ -2,6 +2,12 @@ var App = window.App = Em.Application.create({
    LOG_TRANSITIONS: true
 });
 
+Ember.RSVP.configure('onerror', function(e) {
+  console.log('error message : ', e.message);
+  console.log('error stack : ', e.stack);
+  console.log('error full  : ', e);
+});
+
 App.AccordionGroupComponent = Ember.Component.extend({
   classNames: [
     'accordion-group'

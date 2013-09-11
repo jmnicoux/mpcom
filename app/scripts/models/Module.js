@@ -12,7 +12,8 @@ App.Program = DS.Model.extend({
 App.PrgLine = DS.Model.extend({
   properties: DS.attr('string'),
   basketName: DS.attr('string'),
-  basket: DS.hasMany('basket', {async: true})
+  basket: DS.hasMany('basket', {async: true}),
+  //program: DS.belongsTo('program')
 });
 
 App.Basket = DS.Model.extend({
@@ -28,5 +29,9 @@ App.Track = DS.Model.extend({
 
 
 App.Mssii = DS.Model.extend({
+  name: DS.attr('string')
+});
+
+App.AdsTrack = DS.Model.extend({
   name: DS.attr('string')
 });

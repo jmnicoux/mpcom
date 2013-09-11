@@ -24,6 +24,15 @@ App.Submodule.FIXTURES = [
     "id": "eeprom",
     "name": "Eeprom"
   }, {
+    "id": "network",
+    "name": "Network"
+  }, {
+    "id": "misc",
+    "name": "Misc"
+  }, {
+    "id": "audio",
+    "name": "Audio"
+  }, {
     "id": "date",
     "name": "Date"
   }, {
