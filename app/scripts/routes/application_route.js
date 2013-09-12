@@ -57,6 +57,7 @@ App.ModuleRoute = Em.Route.extend({
     });
   },
   getModule: function (params) {
+    console.log('!!! -> ', params);
     return this.store.find('module', params.module_id).then(function (module) {
       return module;
     });
@@ -65,7 +66,7 @@ App.ModuleRoute = Em.Route.extend({
     //console.log('module params (before) : ', transition.params);
   },
   model: function(params, transition) {
-    //console.log('module params : ', params.module_id);
+    console.log('module params : ', params, transition);
     var self = this;
     //return this.retry(self.getModule(), function () {
       return self.getModule(params);
@@ -80,13 +81,17 @@ App.ModuleRoute = Em.Route.extend({
       //this.transitionTo('index');
     }
   },
-  renderTemplate: function() {
+  renderTemplate: function(controller, model) {
+    console.log('renderTemplate : ', controller, model);
+    var moduleController = this.controllerFor('module');
     this.render('module', {
-      outlet: 'main',
-      into: 'application'
+      outlet: 'module',
+      into: 'application',
+      controller: moduleController
     });
   }
 });
+
 
 
 App.SubmoduleRoute = Em.Route.extend({
@@ -100,11 +105,39 @@ App.SubmoduleRoute = Em.Route.extend({
 
 
 
-
-
+App.MaintenanceRoute = Em.Route.extend({
+  model: function() {
+    return this.store.find('module', 'maintenance').then(function (module) {
+      return module;
+    });
+  },
+  renderTemplate: function(controller, model) {
+    console.log('renderTemplate : ', controller, model);
+    var moduleController = this.controllerFor('module');
+    this.render('module', {
+      outlet: 'module',
+      into: 'application',
+      controller: moduleController
+    });
+  }
+});
+App.MaintenanceDiagnosticRoute = Em.Route.extend({
+  renderTemplate: function() {
+    this.render('diagnostic', {
+      outlet: 'submodule',
+      into: 'module'
+    });
+  }
+});
 
 
 App.PlaylistRoute = Em.Route.extend({
+  model: function(params, transition) {
+    //this.store.findAll('playlistLine');
+    return this.store.findAll('playlistLine').then(function (playlists) {
+      return playlists;
+    });
+  },
   renderTemplate: function() {
     this.render('playlist', {
       outlet: 'submodule',

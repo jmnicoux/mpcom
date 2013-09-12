@@ -8,19 +8,8 @@ Ember.RSVP.configure('onerror', function(e) {
   console.log('error full  : ', e);
 });
 
-App.AccordionGroupComponent = Ember.Component.extend({
-  classNames: [
-    'accordion-group'
-  ],
-  actions: {
-    toggleCollapse: function(e) {
-      this.$('.accordion-inner').slideToggle();
-    }
-  },
-  didInsertElement: function() {
-    //this.$('.accordion-inner').hide();
-    console.log('!!!', this, this.templateName );
-  }
+Ember.Handlebars.registerBoundHelper('playlistDate', function(date) {
+  return moment(date).format('hh:mm');
 });
 
 require('scripts/models/*');

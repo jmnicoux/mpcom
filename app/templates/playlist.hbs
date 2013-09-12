@@ -1,103 +1,28 @@
 <h3 class="box">
   last tracks played
 </h3>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x60">
-    </div>
-    <div class="span2 playlist-line-element">
-      program
-    </div>
-    <div class="span2 playlist-line-element">
-      basket
-    </div>
-    <div class="span2 playlist-line-element">
-      artist : track
-    </div>
-    <div class="span1 playlist-line-element">
-      date/time (duration)
-    </div>
-  </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x60">
-    </div>
-    <div class="span2 playlist-line-element">
-      ads
-    </div>
-    <div class="span2 playlist-line-element">
-      type
-    </div>
-    <div class="span2 playlist-line-element">
-      track
-    </div>
-    <div class="span1 playlist-line-element">
-      date/time (duration)
+{{#each }}
+  <div class="box">
+    <div class="row">
+      <div class="span1">
+        <img src="http://placehold.it/60x60">
+      </div>
+      <div class="span2 playlist-line-element">
+        {{#link-to 'basket' basket.id tagName="div"}}
+          {{basket.name}}
+        {{/link-to}}
+      </div>
+      <div class="span2 playlist-line-element">
+        {{artist}}
+      </div>
+      <div class="span2 playlist-line-element">
+        {{#link-to 'track' track.id tagName="div"}}
+          {{track.name}}
+        {{/link-to}}
+      </div>
+      <div class="span1 playlist-line-element">
+        {{playlistDate date}} (03:12)
+      </div>
     </div>
   </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x60">
-    </div>
-    <div class="span2 playlist-line-element">
-      program
-    </div>
-    <div class="span2 playlist-line-element">
-      basket
-    </div>
-    <div class="span2 playlist-line-element">
-      artist : track
-    </div>
-    <div class="span1 playlist-line-element">
-      date/time (duration)
-    </div>
-  </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x60">
-    </div>
-    <div class="span2 playlist-line-element">
-      program
-    </div>
-    <div class="span2 playlist-line-element">
-      basket
-    </div>
-    <div class="span2 playlist-line-element">
-      artist : track
-    </div>
-    <div class="span1 playlist-line-element">
-      date/time (duration)
-    </div>
-  </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x60">
-    </div>
-    <div class="span2 playlist-line-element">
-      program
-    </div>
-    <div class="span2 playlist-line-element">
-      basket
-    </div>
-    <div class="span2 playlist-line-element">
-      artist : track
-    </div>
-    <div class="span1 playlist-line-element">
-      date/time (duration)
-    </div>
-  </div>
-</div>
+{{/each}}

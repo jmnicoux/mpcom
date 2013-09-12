@@ -1,5 +1,45 @@
-App.Program.FIXTURES = [
-  {
+App.Playlist.FIXTURES = [{
+  playlistLines: ["1", "2", "3", "4", "5"]
+}];
+
+App.PlaylistLine.FIXTURES = [{
+    "id": "1",
+    "type": "music",
+    "basket": "fake_basket1",
+    "artist": "first_fake_artist",
+    "track": "mmfr00000001",
+    "date": "2013/09/12 11:15"
+  },{
+    "id": "2",
+    "type": "music",
+    "basket": "fake_basket1",
+    "artist": "first_fake_artist",
+    "track": "mmfr00000001",
+    "date": "2013/09/12 11:10"
+  },{
+    "id": "3",
+    "type": "music",
+    "basket": "fake_basket1",
+    "artist": "first_fake_artist",
+    "track": "mmfr00000001",
+    "date": "2013/09/12 11:05"
+  },{
+    "id": "4",
+    "type": "music",
+    "basket": "fake_basket1",
+    "artist": "first_fake_artist",
+    "track": "mmfr00000001",
+    "date": "2013/09/12 10:55"
+  },{
+    "id": "5",
+    "type": "music",
+    "basket": "fake_basket1",
+    "artist": "first_fake_artist",
+    "track": "mmfr00000001",
+    "date": "2013/09/12 10:50"
+}];
+
+App.Program.FIXTURES = [{
     "id": "fake_program_a",
     "name": "fake Program A",
     "prgLines": ["fake_program_a1", "fake_program_a2", "fake_program_a3"]
@@ -11,11 +51,9 @@ App.Program.FIXTURES = [
     "id": "fake_program_c",
     "name": "fake Program C",
     "prgLines": ["fake_program_c1"]
-  }
-];
+}];
 
-App.PrgLine.FIXTURES = [
-  {
+App.PrgLine.FIXTURES = [{
     "id": "fake_program_a1",
     "basketName" : "fake basket 1",
     "basket" : ["fake_basket1"],
@@ -40,11 +78,9 @@ App.PrgLine.FIXTURES = [
     "basketName" : "fake basket 3",
     "basket" : ["fake_basket3"],
     "properties": "blabla b2"
-  }
-];
+}];
 
-App.Basket.FIXTURES = [
-  {
+App.Basket.FIXTURES = [{
     "id": "fake_basket1",
     "name": "fake basket 1",
     "tracks": ["mmfr00000001", "mmfr00000003"]
@@ -59,13 +95,14 @@ App.Basket.FIXTURES = [
   }, {
     "id": "fake_basket4",
     "name": "fake basket 4",
-    "tracks": ["mmfr00000006", "mmfr00000007", "mmfr00000008", "mmfr00000009"]
-  }
-];
+    "tracks": ["mmfr00000006",
+      "mmfr00000007",
+      "mmfr00000008",
+      "mmfr00000009"]
+}];
 
 
-App.Track.FIXTURES = [
-  {
+App.Track.FIXTURES = [{
     "id": "mmfr00000001",
     "name": "fake track 1"
   }, {
@@ -92,12 +129,10 @@ App.Track.FIXTURES = [
   }, {
     "id": "mmfr00000009",
     "name": "fake track 9"
-  }
-];
+}];
 
 
-App.Mssii.FIXTURES = [
-  {
+App.Mssii.FIXTURES = [{
     "id": "regular",
     "name": "regular"
   }, {
@@ -112,5 +147,4 @@ App.Mssii.FIXTURES = [
   }, {
     "id": "locals",
     "name": "locals"
-  }
-];
+}];

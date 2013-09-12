@@ -13,8 +13,9 @@ App.ProgramAdapter = DS.RESTAdapter.extend({
 */
 
 
+App.PlaylistAdapter = DS.FixtureAdapter.extend();
+App.PlaylistLineAdapter = DS.FixtureAdapter.extend();
 App.ProgramAdapter = DS.FixtureAdapter.extend();
-
 App.PrgLineAdapter = DS.FixtureAdapter.extend();
 App.BasketAdapter = DS.FixtureAdapter.extend();
 App.TrackAdapter = DS.FixtureAdapter.extend();

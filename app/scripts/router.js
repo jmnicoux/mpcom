@@ -38,4 +38,16 @@ App.Router.map(function() {
     this.resource('contacts');
 
   });
+/*
+  this.resource('maintenance', function() {
+    console.log(this)
+    this.resource('diagnostic');
+    this.resource('update');
+  });
+
+  this.resource('help', function() {
+    this.resource('docs');
+    this.resource('contacts');
+  });
+*/
 });
