@@ -3,12 +3,29 @@
 </h3>
 
 {{#each prgLines}}
-  <div class="box">
-    {{#each basket}} 
-      <span {{action "navToBasket" this}}>
-        {{name}} 
-      </span>
-    {{/each}} : 
-    {{properties}}
+  <div class="box prg-line">
+    <div class="row">
+      {{#link-to 'basket' basket.id tagName="div" class="basket span"}}
+        {{basket.name}}
+      {{/link-to}}
+      <div class="validity-date span">
+        {{date startDate}} {{date endDate}}
+      </div>
+      <div class="validity-hour span">
+        {{time startDate}} {{time endDate}}
+      </div>
+      <div class="daily-validity span">
+        <span class="label">M</span>
+        <span class="label">T</span>
+        <span class="label">W</span>
+        <span class="label label-info">T</span>
+        <span class="label">F</span>
+        <span class="label">S</span>
+        <span class="label">S</span>
+      </div>
+      <div class="span frq pull-right">{{frq}}</div>
+
+
+    </div>
   </div>
 {{/each}}

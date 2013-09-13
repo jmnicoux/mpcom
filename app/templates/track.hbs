@@ -1,6 +1,31 @@
 <h3 class="box">
-  {{id}} 
+  {{id}}
 </h3>
 <div  class="box">
-  {{id}} -> {{name}}
+  <div  class="row">
+    <div class="span1">
+      <img src="http://placehold.it/80x80">
+    </div>
+    <div class="row span7">
+      <div class="span2 playlist-line-element">
+        {{album}}
+      </div>
+      <div class="span2 playlist-line-element">
+        {{artist}}
+      </div>
+      <div class="span2 playlist-line-element">
+        {{name}}
+      </div>
+    </div>
+    <div class="row span7 pull-right">
+      <div class="span2 offset1">
+        {{label}}
+      </div>
+      <div class="span1 offset1">
+        {{year}}
+      </div>
+      <div class="span1 pull-right">
+        {{duration}}
+      </div>
+  </div>
 </div>

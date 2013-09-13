@@ -26,35 +26,61 @@ App.PlaylistLine = DS.Model.extend({
 
 App.Program = DS.Model.extend({
   name: DS.attr('string'),
-  prgLines: DS.hasMany('prgLine', {async: true})
+  prgLines: DS.hasMany('prgLine', {async: true}),
+  lastEdit: DS.attr('date')
 });
 
 App.PrgLine = DS.Model.extend({
+  basket: DS.belongsTo('basket'),
   properties: DS.attr('string'),
-  basketName: DS.attr('string'),
-  basket: DS.hasMany('basket', {async: true})
+  startDate: DS.attr('date'),
+  endDate: DS.attr('date'),
+  startValidity: DS.attr('string'),
+  endValidity: DS.attr('string'),
+  Mon: DS.attr('boolean'),
+  Tue: DS.attr('boolean'),
+  Wed: DS.attr('boolean'),
+  Thu: DS.attr('boolean'),
+  Fri: DS.attr('boolean'),
+  Sat: DS.attr('boolean'),
+  Sun: DS.attr('boolean'),
+  frq: DS.attr('number')
 });
 
 App.Basket = DS.Model.extend({
   name: DS.attr('string'),
-  tracks: DS.hasMany('track', {async: true})
+  tracks: DS.hasMany('track', {async: true}),
+  lastEdit: DS.attr('date')
 });
 
 App.Track = DS.Model.extend({
-  name: DS.attr('string')
+  album: DS.attr('string'),
+  artist: DS.attr('string'),
+  name: DS.attr('string'),
+  label: DS.attr('string'),
+  year: DS.attr('string'),
+  duration: DS.attr('string'),
+  lastEdit: DS.attr('date'),
+  consistency: DS.attr('boolean') //basket length match track's size on hdd +/-x%
 });
 
-App.AdsTrack = DS.Model.extend({
-  name: DS.attr('string')
-});
+
 
 
 //ads
 
-App.Mssii = DS.Model.extend({
-  name: DS.attr('string')
+App.AdsTrack = DS.Model.extend({
+  name: DS.attr('string'),
+  duration: DS.attr('string'),
+  lastEdit: DS.attr('date'),
+  mssiis: DS.hasMany('mssii')
 });
 
-App.AdsTrack = DS.Model.extend({
-  name: DS.attr('string')
+
+App.Mssii = DS.Model.extend({
+  name: DS.attr('string'),
+  zone: DS.attr('string'),
+  type: DS.attr('string'),
+  lastEdit: DS.attr('date')
 });
+

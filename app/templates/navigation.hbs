@@ -1,0 +1,16 @@
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    {{#link-to 'index' class="brand"}}
+      <span class="logo logoMoodColor">MOOD</span><span class="logo dot">:</span><span class="sublogo logoMoodColor">MPCOM</span>
+    {{/link-to}}
+    <ul class="nav">
+      {{#each module in controller}}
+        <li>
+          {{#link-to module.id}}
+            {{module.name}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

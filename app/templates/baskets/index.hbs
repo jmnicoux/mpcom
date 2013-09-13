@@ -4,6 +4,16 @@
 
 {{#each }}
   <div {{action "subNavTo" this}} class="box">
-    {{name}}
+    <div class="row">
+      <div class="span5">
+        {{name}}
+      </div>
+      <div class="span1">
+        {{tracks.length}}
+      </div>
+      <div class="span2">
+        {{dateTime lastEdit}}
+      </div>
+    </div>
   </div>
 {{/each}}

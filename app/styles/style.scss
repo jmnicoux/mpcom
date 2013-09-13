@@ -63,7 +63,9 @@ html, body {
   margin-left: 15px;
 }
 
-
+#playlist {
+  text-align: center;
+}
 
 .playlist-line-element {
   margin-top: 20px;
@@ -74,13 +76,31 @@ html, body {
  }
 
 
+.prg-line .basket {
+  width: 190px;
+}
 
+.prg-line .label {
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  margin-right: -4px;
+  width: 10px;
+}
 
+.prg-line .frq {
+  width: 30px;
+  margin-left: 10px;
+  text-align: right;
+}
 
+.prg-line .daily-validity {
 
+}
 
+.prg-line .validity-date {
 
-
+}
 
 
 
