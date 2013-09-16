@@ -18,16 +18,16 @@ App.Zone = DS.Model.extend({
 
 App.Playlist = DS.Model.extend({
   playlistLines: DS.hasMany('playlistLine', {async: true}),
-  zone: DS.belongsTo('zone')
+  zone: DS.belongsTo('zone'),
+  date: DS.attr('date')
 });
 
 App.PlaylistLine = DS.Model.extend({
   type: DS.attr('string'),
   basket: DS.belongsTo('basket'),
-  artist: DS.attr('string'),
   track: DS.belongsTo('track'),
-  //adsTrack: DS.belongsTo('adsTrack', {async: true}),
-  //mssii: DS.belongsTo('mssii'),
+  adsTrack: DS.belongsTo('adsTrack', {async: true}),
+  mssii: DS.belongsTo('mssii'),
   date: DS.attr('date')
 });
 
@@ -40,7 +40,6 @@ App.Program = DS.Model.extend({
 
 App.PrgLine = DS.Model.extend({
   basket: DS.belongsTo('basket'),
-  properties: DS.attr('string'),
   startDate: DS.attr('date'),
   endDate: DS.attr('date'),
   startValidity: DS.attr('string'),
@@ -88,10 +87,20 @@ App.AdsTrack = DS.Model.extend({
 
 App.Mssii = DS.Model.extend({
   name: DS.attr('string'),
-  zone: DS.attr('string'),
-  type: DS.belongsTo('zone'),
+  type: DS.attr('string'),
+  zone: DS.belongsTo('zone'),
   adsTracks: DS.hasMany('adsTrack'),
   lastEdit: DS.attr('date')
 });
 
+App.Planning = DS.Model.extend({
+  planningLines: DS.hasMany('planningLine'),
+  date: DS.attr('date'),
+  zone: DS.belongsTo('zone')
+});
 
+App.PlanningLine = DS.Model.extend({
+  mssii: DS.belongsTo('mssii'),
+  adsTrack: DS.belongsTo('adsTrack'),
+  date: DS.attr('date')
+});

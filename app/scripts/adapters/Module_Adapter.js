@@ -15,13 +15,15 @@ App.ProgramAdapter = DS.RESTAdapter.extend({
 
 App.PlaylistAdapter = DS.FixtureAdapter.extend();
 App.PlaylistLineAdapter = DS.FixtureAdapter.extend();
+//App.PlaylistLineAdapter = DS.RESTAdapter.extend();
 App.ProgramAdapter = DS.FixtureAdapter.extend();
 App.PrgLineAdapter = DS.FixtureAdapter.extend();
 App.BasketAdapter = DS.FixtureAdapter.extend();
+//App.BasketAdapter = DS.RESTAdapter.extend();
 App.TrackAdapter = DS.FixtureAdapter.extend();
 
 App.MssiiAdapter = DS.FixtureAdapter.extend();
-
+App.AdsTrackAdapter = DS.FixtureAdapter.extend();
 
 //App.ModuleAdapter = DS.RESTAdapter.extend();
 //App.SubmoduleAdapter = DS.RESTAdapter.extend();

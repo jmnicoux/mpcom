@@ -326,6 +326,7 @@ App.MssiisRoute = App.SubmoduleRoute.extend();
 
 App.MssiisIndexRoute = App.MssiisRoute.extend({
   model: function(params, transition) {
+    console.log(params);
     return this.store.findAll('mssii').then(function (mssiis) {
       return mssiis;
     });
@@ -359,6 +360,50 @@ App.MssiiRoute = Em.Route.extend({
   },
   renderTemplate: function() {
     this.render('mssii', {
+      outlet: 'main',
+      into: 'submodule'
+    });
+  }
+});
+
+
+App.AdsTracksRoute = App.SubmoduleRoute.extend();
+
+App.AdsTracksIndexRoute = App.TracksRoute.extend({
+  model: function(params, transition) {
+    return this.store.findAll('adsTrack').then(function (adsTracks) {
+      return adsTracks;
+    });
+  },
+  actions: {
+    error: function() {
+      this.transitionTo('index');
+    },
+    subNavTo: function (destination) {
+      this.transitionTo('adsTrack', destination);
+    }
+  },
+  renderTemplate: function() {
+    this.render('adsTracks.index', {
+      outlet: 'main',
+      into: 'submodule'
+    });
+  }
+});
+
+App.AdsTrackRoute = Em.Route.extend({
+  model: function(params, transition) {
+    return this.store.find('adsTrack', params.adsTrack_id ).then(function (adsTrack) {
+      return adsTrack;
+    });
+  },
+  actions: {
+    error: function() {
+      this.transitionTo('index');
+    }
+  },
+  renderTemplate: function() {
+    this.render('adsTrack', {
       outlet: 'main',
       into: 'submodule'
     });

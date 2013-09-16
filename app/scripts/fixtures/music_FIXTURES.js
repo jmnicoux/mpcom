@@ -42,16 +42,19 @@ App.PlaylistLine.FIXTURES = [{
 App.Program.FIXTURES = [{
     "id": "fake_program_a",
     "name": "fake Program A",
+    "zone": "1",
     "prgLines": ["fake_program_a1", "fake_program_a2", "fake_program_a3"],
     "lastEdit": "2013/02/01 13:14"
   }, {
     "id": "fake_program_b",
     "name": "fake Program B",
+    "zone": "1",
     "prgLines": ["fake_program_b1", "fake_program_b2"],
     "lastEdit": "2013/09/10 06:54"
   }, {
     "id": "fake_program_c",
     "name": "fake Program C",
+    "zone": "1",
     "prgLines": ["fake_program_c1"],
     "lastEdit": "2013/07/13 01:00"
 }];
@@ -257,18 +260,40 @@ App.Track.FIXTURES = [{
 
 
 App.Mssii.FIXTURES = [{
-    "id": "regular",
-    "name": "regular"
+    "id": "regulars_1",
+    "type": "regular",
+    "zone": "1",
+    "name": "regulars",
+    "mssiiLines": [],
+    "lastEdit": "2013/06/23 23:33"
   }, {
-    "id": "events",
-    "name": "events"
+    "id": "events_1",
+    "type": "event",
+    "zone": "1",
+    "name": "events",
+    "mssiiLines": [],
+    "lastEdit": "2013/06/23 23:33"
   }, {
-    "id": "open_close",
-    "name": "open/close"
+    "id": "opens_closes_1",
+    "type": "event",
+    "zone": "1",
+    "name": "opens/closes",
+    "mssiiLines": [],
+    "lastEdit": "2013/06/23 23:33"
   }, {
-    "id": "adcom",
-    "name": "adcom"
+    "id": "adcoms_1",
+    "type": "local",
+    "zone": "1",
+    "name": "adcoms",
+    "mssiiLines": [],
+    "lastEdit": "2013/06/23 23:33"
   }, {
-    "id": "locals",
-    "name": "locals"
+    "id": "local_1",
+    "type": "local",
+    "zone": "1",
+    "name": "locals",
+    "mssiiLines": [],
+    "lastEdit": "2013/06/23 23:33"
 }];
+
+

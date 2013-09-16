@@ -23,7 +23,6 @@ App.Router.map(function() {
     });
 
   });
-
   this.resource('settings', function() {
     this.resource('eeprom');
     this.resource('network');
