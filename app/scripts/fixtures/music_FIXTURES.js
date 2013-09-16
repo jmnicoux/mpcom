@@ -261,37 +261,37 @@ App.Track.FIXTURES = [{
 
 App.Mssii.FIXTURES = [{
     "id": "regulars_1",
+    "name": "regulars",
     "type": "regular",
     "zone": "1",
-    "name": "regulars",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
   }, {
     "id": "events_1",
+    "name": "events",
     "type": "event",
     "zone": "1",
-    "name": "events",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
   }, {
     "id": "opens_closes_1",
+    "name": "opens/closes",
     "type": "event",
     "zone": "1",
-    "name": "opens/closes",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
   }, {
     "id": "adcoms_1",
+    "name": "adcoms",
     "type": "local",
     "zone": "1",
-    "name": "adcoms",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
   }, {
     "id": "local_1",
+    "name": "locals",
     "type": "local",
     "zone": "1",
-    "name": "locals",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
 }];
