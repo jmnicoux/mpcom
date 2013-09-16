@@ -211,7 +211,7 @@ App.Track.FIXTURES = [{
     "label": "myLabel",
     "year": "2011",
     "duration": "4:22",
-    "lastEdit": "2013/07/13 18h03",
+    "lastEdit": "2013/07/13 18:03",
     "consistency": "true"
   }, {
     "id": "mmfr00000006",
@@ -221,7 +221,7 @@ App.Track.FIXTURES = [{
     "label": "myLabel",
     "year": "2011",
     "duration": "1:03",
-    "lastEdit": "2013/07/13 01h05",
+    "lastEdit": "2013/07/13 01:05",
     "consistency": "true"
   }, {
     "id": "mmfr00000007",
@@ -231,7 +231,7 @@ App.Track.FIXTURES = [{
     "label": "myLabel",
     "year": "2011",
     "duration": "0:51",
-    "lastEdit": "2012/04/13 14h32",
+    "lastEdit": "2012/04/13 14:32",
     "consistency": "true"
   }, {
     "id": "mmfr00000008",
@@ -241,7 +241,7 @@ App.Track.FIXTURES = [{
     "label": "myLabel",
     "year": "2011",
     "duration": "3:12",
-    "lastEdit": "2013/02/18 07h06",
+    "lastEdit": "2013/02/18 07:06",
     "consistency": "true"
   }, {
     "id": "mmfr00000009",
@@ -251,7 +251,7 @@ App.Track.FIXTURES = [{
     "label": "myLabel",
     "year": "2011",
     "duration": "3:12",
-    "lastEdit": "2013/06/23 23h33",
+    "lastEdit": "2013/06/23 23:33",
     "consistency": "true"
 }];
 

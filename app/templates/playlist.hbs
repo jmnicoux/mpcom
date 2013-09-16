@@ -8,9 +8,24 @@
       <div class="span2">basket</div>
       <div class="span2">artist</div>
       <div class="span2">track</div>
-      <div class="span1">hour (duration)</div>
+      <div class="span1">hour</div>
     </div>
   </div>
+
+  <div class="box">
+    <div class="row">
+      <div class="span1">
+        <img src="http://placehold.it/60x40">
+      </div>
+      <div class="span2 offset4 planning-line-element">
+        track
+      </div>
+      <div class="span1 playlist-line-element">
+        hour
+      </div>
+    </div>
+  </div>
+
   {{#each }}
     <div class="box">
       <div class="row">
@@ -31,7 +46,7 @@
           {{/link-to}}
         </div>
         <div class="span1 playlist-line-element">
-          {{time date}} ({{track.duration}})
+          {{time date}}
         </div>
       </div>
     </div>

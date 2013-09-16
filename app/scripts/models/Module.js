@@ -8,10 +8,17 @@ App.Submodule = DS.Model.extend({
 });
 
 
+//commons
+App.Zone = DS.Model.extend({
+  name: DS.attr('string')
+});
+
+
 //music
 
 App.Playlist = DS.Model.extend({
-  playlistLines: DS.hasMany('playlistLine', {async: true})
+  playlistLines: DS.hasMany('playlistLine', {async: true}),
+  zone: DS.belongsTo('zone')
 });
 
 App.PlaylistLine = DS.Model.extend({
@@ -26,6 +33,7 @@ App.PlaylistLine = DS.Model.extend({
 
 App.Program = DS.Model.extend({
   name: DS.attr('string'),
+  zone: DS.belongsTo('zone'),
   prgLines: DS.hasMany('prgLine', {async: true}),
   lastEdit: DS.attr('date')
 });
@@ -67,20 +75,23 @@ App.Track = DS.Model.extend({
 
 
 
+
 //ads
 
 App.AdsTrack = DS.Model.extend({
   name: DS.attr('string'),
   duration: DS.attr('string'),
-  lastEdit: DS.attr('date'),
-  mssiis: DS.hasMany('mssii')
+  mssiis: DS.hasMany('mssii'),
+  lastEdit: DS.attr('date')
 });
 
 
 App.Mssii = DS.Model.extend({
   name: DS.attr('string'),
   zone: DS.attr('string'),
-  type: DS.attr('string'),
+  type: DS.belongsTo('zone'),
+  adsTracks: DS.hasMany('adsTrack'),
   lastEdit: DS.attr('date')
 });
+
 
