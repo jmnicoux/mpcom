@@ -1,61 +1,25 @@
 <h3 class="box">
   adverts diffusion planning
-  <div class="span2 pull-right">date</div>
+  <div class="span2 pull-right">{{date date}}</div>
 </h3>
 
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x40">
-    </div>
-    <div class="span2 offset4 planning-line-element">
-      track
-    </div>
-    <div class="span1 planning-line-element">
-      hour
-    </div>
-  </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x40">
-    </div>
-    <div class="span2 offset4 planning-line-element">
-      track
-    </div>
-    <div class="span1 planning-line-element">
-      hour
+{{#each planningLines}}
+  <div class="box">
+    <div class="row">
+      <div class="span1">
+        <div class="ads-track-logo">
+          <div class="ads-track-logo-container">
+            <span class="logo dot">:</span><span class="sublogo logoMoodColor">{{mssii.type}}</span>
+          </div>
+        </div>
+      </div>
+      {{#link-to 'adsTrack' adsTrack.id tagName="div" class="span2 offset4 planning-line-element"}}
+        {{adsTrack.name}}
+      {{/link-to}}
+      <div class="span1 planning-line-element">
+        {{time date}}
+      </div>
     </div>
   </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x40">
-    </div>
-    <div class="span2 offset4 planning-line-element">
-      track
-    </div>
-    <div class="span1 planning-line-element">
-      hour
-    </div>
-  </div>
-</div>
-
-<div class="box">
-  <div class="row">
-    <div class="span1">
-      <img src="http://placehold.it/60x40">
-    </div>
-    <div class="span2 offset4 planning-line-element">
-      track
-    </div>
-    <div class="span1 planning-line-element">
-      hour
-    </div>
-  </div>
-</div>
+{{/each}}
 

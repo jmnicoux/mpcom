@@ -1,5 +1,6 @@
 App.Playlist.FIXTURES = [{
-  playlistLines: ["1", "2", "3", "4", "5"]
+  "playlistLines": ["1", "2", "3", "4", "5"],
+  "date": "2013/09/12"
 }];
 
 App.PlaylistLine.FIXTURES = [{
@@ -8,13 +9,12 @@ App.PlaylistLine.FIXTURES = [{
     "basket": "fake_basket1",
     "artist": "first_fake_artist",
     "track": "mmfr00000001",
-    "date": "2013/09/12 11:15"
+    "date": "2013/09/12 11:11"
   },{
     "id": "2",
-    "type": "music",
-    "basket": "fake_basket1",
-    "artist": "first_fake_artist",
-    "track": "mmfr00000003",
+    "type": "ads",
+    "mssii": "regulars_1",
+    "adsTrack": "fake_ads_1",
     "date": "2013/09/12 11:10"
   },{
     "id": "3",
@@ -66,13 +66,7 @@ App.PrgLine.FIXTURES = [{
     "endDate" : "2027/01/01 19:00",
     "startValidity": "10:00",
     "endValidity": "13:30",
-    "Mon": "true",
-    "Tue": "true",
-    "Wed": "true",
-    "Thu": "true",
-    "Fri": "false",
-    "Sat": "true",
-    "Sun": "true",
+    "dow": "FC",
     "frq": "1"
   }, {
     "id": "fake_program_a2",
@@ -82,13 +76,7 @@ App.PrgLine.FIXTURES = [{
     "endDate" : "2027/01/01 19:00",
     "startValidity": "10:00",
     "endValidity": "13:30",
-    "Mon": "true",
-    "Tue": "true",
-    "Wed": "true",
-    "Thu": "true",
-    "Fri": "false",
-    "Sat": "true",
-    "Sun": "true",
+    "dow": "FE",
     "frq": "973"
   }, {
     "id": "fake_program_a3",
@@ -98,13 +86,7 @@ App.PrgLine.FIXTURES = [{
     "endDate" : "2027/01/01 19:00",
     "startValidity": "10:00",
     "endValidity": "13:30",
-    "Mon": "true",
-    "Tue": "true",
-    "Wed": "true",
-    "Thu": "true",
-    "Fri": "false",
-    "Sat": "true",
-    "Sun": "true",
+    "dow": "FE",
     "frq": "3"
   }, {
     "id": "fake_program_b1",
@@ -114,13 +96,7 @@ App.PrgLine.FIXTURES = [{
     "endDate" : "2027/01/01 19:00",
     "startValidity": "10:00",
     "endValidity": "13:30",
-    "Mon": "true",
-    "Tue": "true",
-    "Wed": "true",
-    "Thu": "true",
-    "Fri": "false",
-    "Sat": "true",
-    "Sun": "true",
+    "dow": "FE",
     "frq": "3"
   }, {
     "id": "fake_program_b2",
@@ -130,13 +106,7 @@ App.PrgLine.FIXTURES = [{
     "endDate" : "2027/01/01 19:00",
     "startValidity": "10:00",
     "endValidity": "13:30",
-    "Mon": "true",
-    "Tue": "true",
-    "Wed": "true",
-    "Thu": "true",
-    "Fri": "false",
-    "Sat": "true",
-    "Sun": "true",
+    "dow": "FE",
     "frq": "3"
 }];
 
@@ -259,13 +229,46 @@ App.Track.FIXTURES = [{
 }];
 
 
+
+
+
+
+
+
+App.Planning.FIXTURES = [{
+    "id": "2013_09_17_1",
+    "zone": "1",
+    "planningLines": ["2013_09_17_1_10_14", "2013_09_17_1_10_39", "2013_09_17_1_17_00"],
+    "date": "2013/09/17"
+}];
+
+App.PlanningLine.FIXTURES = [{
+    "id": "2013_09_17_1_10_14",
+    "mssii": "regulars_1",
+    "adsTrack": "fake_ads_1",
+    "date": "2013/09/17 10:14"
+  }, {
+    "id": "2013_09_17_1_10_39",
+    "mssii": "regulars_1",
+    "adsTrack": "fake_ads_2",
+    "date": "2013/09/17 10:39"
+  }, {
+    "id": "2013_09_17_1_17_00",
+    "mssii": "opens_closes_1",
+    "adsTrack": "fake_ads_4",
+    "date": "2013/09/17 17:00"
+}];
+
 App.Mssii.FIXTURES = [{
     "id": "regulars_1",
     "name": "regulars",
     "type": "regular",
     "zone": "1",
     "mssiiLines": [],
-    "lastEdit": "2013/06/23 23:33"
+    "lastEdit": "2013/06/23 23:33",
+    "subType": "window",
+    "windowSize": "60",
+    "endValidity": "2027/12/31"
   }, {
     "id": "events_1",
     "name": "events",
@@ -276,14 +279,14 @@ App.Mssii.FIXTURES = [{
   }, {
     "id": "opens_closes_1",
     "name": "opens/closes",
-    "type": "event",
+    "type": "open/close",
     "zone": "1",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
   }, {
     "id": "adcoms_1",
     "name": "adcoms",
-    "type": "local",
+    "type": "adcom",
     "zone": "1",
     "mssiiLines": [],
     "lastEdit": "2013/06/23 23:33"
@@ -296,4 +299,59 @@ App.Mssii.FIXTURES = [{
     "lastEdit": "2013/06/23 23:33"
 }];
 
+App.MssiiLine.FIXTURES = [{
+    "id": "regulars_1_1",
+    "adsTrack": "fake_ads_1",
+    "start": "2013/06/18",
+    "end": "2013/12/31",
+    "qh": "00000000FFFFFFFFFFFF0000",
+    "dow": "FE"
+  }, {
+    "id": "regulars_1_3",
+    "adsTrack": "fake_ads_2",
+    "start": "2013/06/18",
+    "end": "2013/12/31",
+    "qh": "00000000FFFFFFFFFFFF0000",
+    "dow": "FC"
+  }, {
+    "id": "events_1_1",
+    "adsTrack": "fake_ads_3",
+    "start": "2013/06/18",
+    "end": "2013/12/31",
+    "hour": "12:14"
+  }, {
+    "id": "locals_1_1",
+    "adsTrack": "fake_ads_2",
+    "start": "2013/05/28",
+    "end": "2027/12/31",
+    "qh": "00000000FFFFFFFFFFFF0000",
+    "dow": "FC",
+    "frq": "20"
+}];
 
+
+
+
+
+
+App.AdsTrack.FIXTURES = [{
+    "id": "fake_ads_1",
+    "name": "fake ads 1",
+    "duration": "1:32",
+    "lastEdit": "2013/06/11 12:14"
+  }, {
+    "id": "fake_ads_2",
+    "name": "fake ads 2",
+    "duration": "0:27",
+    "lastEdit": "2013/08/27 08:16"
+  }, {
+    "id": "fake_ads_3",
+    "name": "fake ads 3",
+    "duration": "0:10",
+    "lastEdit": "2013/09/17 10:07"
+  }, {
+    "id": "fake_ads_4",
+    "name": "pre_open",
+    "duration": "0:10",
+    "lastEdit": "2013/09/17 09:17"
+}];

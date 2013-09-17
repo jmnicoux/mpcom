@@ -28,7 +28,6 @@ App.Playlist = DS.Model.extend({
 
 App.PlaylistLine = DS.Model.extend({
   //id: date_zoneId             ex: 2013_09_15_10_14_1 (=line de 10h14 pour playlist du 15 sept 2013 pour la zone 1)
-  type: DS.attr('string'),
   basket: DS.belongsTo('basket'),
   track: DS.belongsTo('track'),
   adsTrack: DS.belongsTo('adsTrack'),
@@ -51,13 +50,7 @@ App.PrgLine = DS.Model.extend({
   endDate: DS.attr('date'),
   startValidity: DS.attr('string'),
   endValidity: DS.attr('string'),
-  Mon: DS.attr('boolean'),
-  Tue: DS.attr('boolean'),
-  Wed: DS.attr('boolean'),
-  Thu: DS.attr('boolean'),
-  Fri: DS.attr('boolean'),
-  Sat: DS.attr('boolean'),
-  Sun: DS.attr('boolean'),
+  dow: DS.attr('dow'),
   frq: DS.attr('number')
 });
 
@@ -96,11 +89,19 @@ App.AdsTrack = DS.Model.extend({
   lastEdit: DS.attr('date')
 });
 
-App.MssiiLines = DS.Model.extend({
+App.MssiiLine = DS.Model.extend({
   //id: mmssii name underscored + _line number  ex: mssii_aut_1_3 (=3eme ligne du fichier mssii.aut.1)
   adsTrack: DS.belongsTo('adsTrack'),
-
-
+  mssii: DS.belongsTo('mssii'),
+  dow: DS.attr('dow'),
+  //evt
+  hour: DS.attr('string'),
+  //aut and local
+  start: DS.attr('date'),
+  end: DS.attr('date'),
+  qh: DS.attr('string'), //TODO : add associated transform
+  //local
+  frq: DS.attr('number')
 });
 
 App.Mssii = DS.Model.extend({
@@ -109,18 +110,23 @@ App.Mssii = DS.Model.extend({
   type: DS.attr('string'),
   zone: DS.belongsTo('zone'),
   mssiiLines: DS.hasMany('mssiiLine'),
-  lastEdit: DS.attr('date')
+  lastEdit: DS.attr('date'),
+  //aut specific
+  endValidity: DS.attr('date'),
+  subType: DS.attr('string'), //window or timer
+  windowSize: DS.attr('number')
 });
+
 
 App.Planning = DS.Model.extend({
   //id: date underscored_zone_id        ex: 2013_07_22_1 (=planning du 22/07/2013 pour la zone 1)
-  planningLines: DS.hasMany('planningLine'),
+  planningLines: DS.hasMany('planningLine', {async: true}),
   date: DS.attr('date'),
   zone: DS.belongsTo('zone')
 });
 
 App.PlanningLine = DS.Model.extend({
-  //id: planning id_zone_id             ex: 2013_07_22_1_7 (=7eme ligne du planning du 22/07/2013 pour la zone 1)
+  //id: planning_id_hour_zone_id             ex: 2013_07_22_1_10_14 (=ligne de 10h14 du planning du 22/07/2013 pour la zone 1)
   mssii: DS.belongsTo('mssii'),
   adsTrack: DS.belongsTo('adsTrack'),
   date: DS.attr('date')

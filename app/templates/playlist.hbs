@@ -1,54 +1,49 @@
 <h3 class="box">
   last tracks played
+  <div class="span2 pull-right">
+    {{date date}}
+  </div>
 </h3>
 <div id="playlist">
-  <div class="box">
-    <div class="row">
-      <div class="span1">cover</div>
-      <div class="span2">basket</div>
-      <div class="span2">artist</div>
-      <div class="span2">track</div>
-      <div class="span1">hour</div>
-    </div>
-  </div>
-
-  <div class="box">
-    <div class="row">
-      <div class="span1">
-        <img src="http://placehold.it/60x40">
-      </div>
-      <div class="span2 offset4 planning-line-element">
-        track
-      </div>
-      <div class="span1 planning-line-element">
-        hour
-      </div>
-    </div>
-  </div>
-
   {{#each }}
-    <div class="box">
-      <div class="row">
-        <div class="span1">
-          <img src="http://placehold.it/60x60">
-        </div>
-        <div class="span2 playlist-line-element">
-          {{#link-to 'basket' basket.id tagName="div"}}
+    {{#if track}}
+      <div class="box">
+        <div class="row">
+          <div class="span1">
+            <img src="http://placehold.it/60x60">
+          </div>
+          {{#link-to 'basket' basket.id tagName="div" class="span2 playlist-line-element"}}
             {{basket.name}}
           {{/link-to}}
-        </div>
-        <div class="span2 playlist-line-element">
-          {{track.artist}}
-        </div>
-        <div class="span2 playlist-line-element">
-          {{#link-to 'track' track.id tagName="div"}}
+          <div class="span2 playlist-line-element">
+            {{track.artist}}
+          </div>
+          {{#link-to 'track' track.id tagName="div" class="span2 playlist-line-element"}}
             {{track.name}}
           {{/link-to}}
-        </div>
-        <div class="span1 playlist-line-element">
-          {{time date}}
+          <div class="span1 playlist-line-element">
+            {{time date}}
+          </div>
         </div>
       </div>
-    </div>
+    {{else}}
+      <div class="box">
+        <div class="row">
+          <div class="span1">
+            <div class="ads-track-logo">
+              <div class="ads-track-logo-container">
+                <span class="logo dot">:</span><span class="sublogo logoMoodColor">{{mssii.type}}</span>
+              </div>
+            </div>
+          </div>
+          {{#link-to 'adsTrack' adsTrack.id tagName="div" class="span2 offset4 planning-line-element"}}
+            {{adsTrack.name}}
+          {{/link-to}}
+          <div class="span1 planning-line-element">
+            {{time date}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
   {{/each}}
 </div>

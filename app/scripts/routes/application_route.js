@@ -12,7 +12,7 @@ App.ApplicationRoute = Em.Route.extend({
 
   getModules: function () {
     //console.log('loading modules');
-    return this.store.find('module').then(function (modules) {
+    return this.store.findAll('module').then(function (modules) {
       return modules;
     });
   },
@@ -312,6 +312,12 @@ App.TrackRoute = Em.Route.extend({
 
 
 App.PlanningRoute = Em.Route.extend({
+   model: function(params, transition) {
+    this.store.fin
+    return this.store.find('planning', '2013_09_17_1').then(function (planning) {
+      return planning;
+    });
+  },
   renderTemplate: function() {
     this.render('planning', {
       outlet: 'submodule',
@@ -326,7 +332,6 @@ App.MssiisRoute = App.SubmoduleRoute.extend();
 
 App.MssiisIndexRoute = App.MssiisRoute.extend({
   model: function(params, transition) {
-    console.log(params);
     return this.store.findAll('mssii').then(function (mssiis) {
       return mssiis;
     });
