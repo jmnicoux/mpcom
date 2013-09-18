@@ -17,6 +17,18 @@ App.Zone = DS.Model.extend({
 });
 
 
+
+
+
+App.PlanningLine = DS.Model.extend({
+  //id: planning_id_hour_zone_id             ex: 2013_07_22_1_10_14 (=ligne de 10h14 du planning du 22/07/2013 pour la zone 1)
+  mssii: DS.belongsTo('mssii'),
+  adsTrack: DS.belongsTo('adsTrack'),
+  date: DS.attr('date')
+});
+
+
+
 //music
 
 App.Playlist = DS.Model.extend({
@@ -26,13 +38,10 @@ App.Playlist = DS.Model.extend({
   date: DS.attr('date')
 });
 
-App.PlaylistLine = DS.Model.extend({
+App.PlaylistLine = App.PlanningLine.extend({
   //id: date_zoneId             ex: 2013_09_15_10_14_1 (=line de 10h14 pour playlist du 15 sept 2013 pour la zone 1)
   basket: DS.belongsTo('basket'),
-  track: DS.belongsTo('track'),
-  adsTrack: DS.belongsTo('adsTrack'),
-  mssii: DS.belongsTo('mssii'),
-  date: DS.attr('date')
+  track: DS.belongsTo('track')
 });
 
 App.Program = DS.Model.extend({
@@ -94,14 +103,18 @@ App.MssiiLine = DS.Model.extend({
   adsTrack: DS.belongsTo('adsTrack'),
   mssii: DS.belongsTo('mssii'),
   dow: DS.attr('dow'),
+  start: DS.attr('date'),
+  end: DS.attr('date'),
   //evt
   hour: DS.attr('string'),
   //aut and local
-  start: DS.attr('date'),
-  end: DS.attr('date'),
   qh: DS.attr('string'), //TODO : add associated transform
   //local
-  frq: DS.attr('number')
+  frq: DS.attr('number'),
+  //tests
+  mon: function () {
+    return this.get('dow.mon');
+  }.property('dow')
 });
 
 App.Mssii = DS.Model.extend({
@@ -109,7 +122,7 @@ App.Mssii = DS.Model.extend({
   name: DS.attr('string'),
   type: DS.attr('string'),
   zone: DS.belongsTo('zone'),
-  mssiiLines: DS.hasMany('mssiiLine'),
+  mssiiLines: DS.hasMany('mssiiLine', {async: true}),
   lastEdit: DS.attr('date'),
   //aut specific
   endValidity: DS.attr('date'),
@@ -125,9 +138,3 @@ App.Planning = DS.Model.extend({
   zone: DS.belongsTo('zone')
 });
 
-App.PlanningLine = DS.Model.extend({
-  //id: planning_id_hour_zone_id             ex: 2013_07_22_1_10_14 (=ligne de 10h14 du planning du 22/07/2013 pour la zone 1)
-  mssii: DS.belongsTo('mssii'),
-  adsTrack: DS.belongsTo('adsTrack'),
-  date: DS.attr('date')
-});

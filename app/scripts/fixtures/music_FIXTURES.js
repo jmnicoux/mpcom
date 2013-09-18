@@ -264,7 +264,7 @@ App.Mssii.FIXTURES = [{
     "name": "regulars",
     "type": "regular",
     "zone": "1",
-    "mssiiLines": [],
+    "mssiiLines": ["regulars_1_1", "regulars_1_2"],
     "lastEdit": "2013/06/23 23:33",
     "subType": "window",
     "windowSize": "60",
@@ -307,7 +307,7 @@ App.MssiiLine.FIXTURES = [{
     "qh": "00000000FFFFFFFFFFFF0000",
     "dow": "FE"
   }, {
-    "id": "regulars_1_3",
+    "id": "regulars_1_2",
     "adsTrack": "fake_ads_2",
     "start": "2013/06/18",
     "end": "2013/12/31",

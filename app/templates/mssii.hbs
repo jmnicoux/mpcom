@@ -2,8 +2,22 @@
   {{name}}
 </h3>
 
-{{#each confLines}}
+{{#each mssiiLines}}
   <div class="box">
-    {{name}} 
+    <div class="row">
+      {{#link-to 'adsTrack' adsTrack.id tagName="div" class="span2"}}
+        {{adsTrack.name}}
+      {{/link-to}}
+      <div class="span2">
+        {{date start}}
+      </div>
+      <div class="span2">
+        {{date end}}
+      </div>
+      <div class="span2">
+        {{dow}} -{{mon}}-
+      </div>
+
+    </div>
   </div>
 {{/each}}
