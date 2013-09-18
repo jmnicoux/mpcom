@@ -110,11 +110,7 @@ App.MssiiLine = DS.Model.extend({
   //aut and local
   qh: DS.attr('string'), //TODO : add associated transform
   //local
-  frq: DS.attr('number'),
-  //tests
-  mon: function () {
-    return this.get('dow.mon');
-  }.property('dow')
+  frq: DS.attr('number')
 });
 
 App.Mssii = DS.Model.extend({

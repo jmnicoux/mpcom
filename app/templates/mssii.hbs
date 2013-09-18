@@ -3,19 +3,23 @@
 </h3>
 
 {{#each mssiiLines}}
-  <div class="box">
+  <div class="box prg-line">
     <div class="row">
       {{#link-to 'adsTrack' adsTrack.id tagName="div" class="span2"}}
         {{adsTrack.name}}
       {{/link-to}}
-      <div class="span2">
+      <div class="validity-date span">
         {{date start}}
       </div>
-      <div class="span2">
+      <div class="validity-date span">
         {{date end}}
       </div>
-      <div class="span2">
-        {{dow}} -{{mon}}-
+      <div class="daily-validity span">
+        {{#each day in dow}}
+          {{#view tagName="span" classNames=[label] classNameBindings = [day.active:label-info] }}
+            {{day.name}}
+          {{/view}}
+        {{/each}}
       </div>
 
     </div>

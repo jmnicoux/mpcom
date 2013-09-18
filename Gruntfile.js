@@ -64,7 +64,7 @@ module.exports = function (grunt) {
             options: {
                 port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: '10.240.131.202'
+                hostname: '127.0.0.1'
             },
             livereload: {
                 options: {
@@ -72,19 +72,16 @@ module.exports = function (grunt) {
                         return [function(req, res, next) {
                               var url = require('url').parse(req.url);
                               if (
-                                url.path.search("modules") >= 0 ||
-                                url.path.search("submodules") >= 0 ||
-                                url.path.search("playlists") >= 0 ||
-                                url.path.search("playlistLines") >= 0 ||
-                                url.path.search("programs") >= 0 ||
-                                url.path.search("prgLines") >= 0 ||
-                                url.path.search("baskets") >= 0 ||
-                                url.path.search("tracks") >= 0 ||
-                                url.path.search("adsTracks") >= 0 ||
-                                url.path.search("plannings") >= 0 ||
-                                url.path.search("planningLines") >= 0 ||
-                                url.path.search("mssiis") >= 0 ||
-                                url.path.search("mssiiLines")
+                                url.path.search('modules') >= 0 ||
+                                url.path.search('submodules') >= 0 ||
+                                url.path.search('playlist') >= 0 ||
+                                url.path.search('programs') >= 0 ||
+                                url.path.search('prgLines') >= 0 ||
+                                url.path.search('baskets') >= 0 ||
+                                url.path.search('tracks') >= 0 ||
+                                url.path.search('adsTracks') >= 0 ||
+                                url.path.search('planning') >= 0 ||
+                                url.path.search('mssii') >= 0
                               ) {
                                 proxy.proxyRequest(req, res, {
                                   host: '127.0.0.1',

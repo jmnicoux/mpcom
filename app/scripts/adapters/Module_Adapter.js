@@ -9,7 +9,26 @@ App.DowTransform = DS.Transform.extend({
   deserialize: function(hexValue) {
     console.log('adapter transform dow (hex)-->', hexValue);
     var value = parseInt('1'+hexValue,16).toString(2).substring(1);
-    return Ember.create({ mon: value[0], tue: value[1], wed: value[2], thu: value[3], fri: value[4], sat: value[5], sun: value[6]});
+    /*
+    return Ember.create({
+      mon: value[0],
+      tue: value[1],
+      wed: value[2],
+      thu: value[3],
+      fri: value[4],
+      sat: value[5],
+      sun: value[6]
+    });
+    */
+    var week = ["M","T","W","T","F","S","S"];
+    var deserialized = [];
+    for ( var i=0, iMax=value.length-1; i<iMax; i++ ) {
+      var day = {};
+      day.name = week[i];
+      day.active = ( value[i] !== "0" ) ? true : false;
+      deserialized.push(day);
+    }
+    return deserialized;
   }
 });
 
