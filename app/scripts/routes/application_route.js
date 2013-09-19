@@ -358,9 +358,19 @@ App.MssiiRoute = Em.Route.extend({
       return mssii;
     });
   },
+  afterModel: function(model){
+    console.log('after mssii model', model.get('mssiiLines'));
+  },
   actions: {
     error: function() {
       this.transitionTo('index');
+    },
+    save: function(e) {
+      this.modelFor('mssii').save();
+      this.store.findAll('mssiiLine').then(function (mssiiLines) {
+        console.log('--->', mssiiLines.get('content'));
+        mssiiLines.invoke("save");
+      });
     }
   },
   renderTemplate: function() {

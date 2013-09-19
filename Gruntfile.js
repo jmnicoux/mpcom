@@ -81,7 +81,8 @@ module.exports = function (grunt) {
                                 url.path.search('tracks') >= 0 ||
                                 url.path.search('adsTracks') >= 0 ||
                                 url.path.search('planning') >= 0 ||
-                                url.path.search('mssii') >= 0
+                                url.path.search('mssii') >= 0 ||
+                                url.path.search('zone') >= 0
                               ) {
                                 proxy.proxyRequest(req, res, {
                                   host: '127.0.0.1',

@@ -431,7 +431,13 @@ var mssiiLines = [{
     "frq": "20"
 }];
 
-
+var zones = [{
+    "id": "1",
+    "name": "Zone 1"
+  }, {
+    "id": "2",
+    "name": "Zone 2"
+}];
 
 /*
 app.get('/modules', function(req, res) {
@@ -534,6 +540,18 @@ app.get('/mssiiLines', function(req, res) {
   res.json({"mssiiLines": mssiiLines });
 });
 
+
+app.get('/zones', function(req, res) {
+  res.json({"zones": zones});
+});
+
+app.get('/zones/:id', function(req, res) {
+  res.json({"zones": zones});
+});
+
+app.put('/mssiis/:id', function(req, res) {
+  res.json({"mssii": mssiis[0] });
+});
 
 
 

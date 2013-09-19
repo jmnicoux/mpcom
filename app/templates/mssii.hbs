@@ -1,24 +1,24 @@
 <h3 class="box">
-  {{name}}
+  {{name}} <button {{action 'save' this}}>save</button>
 </h3>
 
-{{#each mssiiLines}}
+{{#each mssiiLine in mssiiLines}}
   <div class="box prg-line">
     <div class="row">
-      {{#link-to 'adsTrack' adsTrack.id tagName="div" class="span2"}}
-        {{adsTrack.name}}
+      {{#link-to 'adsTrack' mssiiLine.adsTrack.id tagName="div" class="span2"}}
+        {{mssiiLine.adsTrack.name}}
       {{/link-to}}
       <div class="validity-date span">
-        {{date start}}
+        {{date mssiiLine.start}}
       </div>
       <div class="validity-date span">
-        {{date end}}
+        {{date mssiiLine.end}}
       </div>
       <div class="daily-validity span">
-        {{#each day in dow}}
-          {{#view tagName="span" classNames=[label] classNameBindings = [day.active:label-info] }}
+        {{#each day in mssiiLine.dow}}
+          <span  {{bind-attr class="day:label day.active:label-info"}} {{action 'toggleState' day}}>
             {{day.name}}
-          {{/view}}
+          </span>
         {{/each}}
       </div>
 

@@ -1,31 +1,22 @@
 
 
 App.DowTransform = DS.Transform.extend({
-  serialize: function(value) {
-    console.log('adapter transform dow (bin)-->', value);
-    var binValue = value.get('mon') + value.get('tue') + value.get('wed') + value.get('thu') + value.get('fri') + value.get('sat') + value.get('sun');
+  serialize: function(deserialized) {
+    var binValue;
+    for ( var i=0, iMax=deserialized.length-1; i<iMax; i++ ) {
+      binValue += deserialized[i].active;
+    }
     return parseInt(binValue, 2).toString(16).toUpperCase();
   },
-  deserialize: function(hexValue) {
-    console.log('adapter transform dow (hex)-->', hexValue);
-    var value = parseInt('1'+hexValue,16).toString(2).substring(1);
-    /*
-    return Ember.create({
-      mon: value[0],
-      tue: value[1],
-      wed: value[2],
-      thu: value[3],
-      fri: value[4],
-      sat: value[5],
-      sun: value[6]
-    });
-    */
-    var week = ["M","T","W","T","F","S","S"];
-    var deserialized = [];
+  deserialize: function(serialized) {
+    var deserialized = [],
+        week = ["M","T","W","T","F","S","S"],
+        value = parseInt('1'+serialized,16).toString(2).substring(1);
     for ( var i=0, iMax=value.length-1; i<iMax; i++ ) {
-      var day = {};
-      day.name = week[i];
-      day.active = ( value[i] !== "0" ) ? true : false;
+      var day = Em.Object.create({
+        name: week[i],
+        active: ( value[i] !== "0" ) ? true : false
+      });
       deserialized.push(day);
     }
     return deserialized;
