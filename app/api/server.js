@@ -403,6 +403,7 @@ var mssiis = [{
 
 var mssiiLines = [{
     "id": "regulars_1_1",
+    "mssii": "regulars_1",
     "adsTrack": "fake_ads_1",
     "start": "2013/06/18",
     "end": "2013/12/31",
@@ -410,6 +411,7 @@ var mssiiLines = [{
     "dow": "FE"
   }, {
     "id": "regulars_1_2",
+    "mssii": "regulars_1",
     "adsTrack": "fake_ads_2",
     "start": "2013/06/18",
     "end": "2013/12/31",
@@ -417,12 +419,14 @@ var mssiiLines = [{
     "dow": "FC"
   }, {
     "id": "events_1_1",
+    "mssii": "events_1",
     "adsTrack": "fake_ads_3",
     "start": "2013/06/18",
     "end": "2013/12/31",
     "hour": "12:14"
   }, {
     "id": "locals_1_1",
+    "mssii": "locals_1",
     "adsTrack": "fake_ads_2",
     "start": "2013/05/28",
     "end": "2027/12/31",
@@ -553,6 +557,9 @@ app.put('/mssiis/:id', function(req, res) {
   res.json({"mssii": mssiis[0] });
 });
 
+app.put('/mssiiLines/:id', function(req, res) {
+  res.json({"mssiiLines": mssiiLines });
+});
 
 
 module.exports = app;

@@ -354,23 +354,19 @@ App.MssiisIndexRoute = App.MssiisRoute.extend({
 
 App.MssiiRoute = Em.Route.extend({
   model: function(params, transition) {
+    this.store.findAll('adsTrack');
     return this.store.find('mssii', params.mssii_id ).then(function (mssii) {
       return mssii;
     });
   },
   afterModel: function(model){
-    console.log('after mssii model', model.get('mssiiLines'));
+    //console.log('after mssii model', model.get('mssiiLines'));
+    var mssiiLinesController = this.controllerFor('mssiiLines');
+    mssiiLinesController.set('content', model.get('mssiiLines'));
   },
   actions: {
     error: function() {
-      this.transitionTo('index');
-    },
-    save: function(e) {
-      this.modelFor('mssii').save();
-      this.store.findAll('mssiiLine').then(function (mssiiLines) {
-        console.log('--->', mssiiLines.get('content'));
-        mssiiLines.invoke("save");
-      });
+      this.transitionTo('ads');
     }
   },
   renderTemplate: function() {

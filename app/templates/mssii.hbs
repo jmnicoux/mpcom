@@ -1,5 +1,10 @@
 <h3 class="box">
-  {{name}} <button {{action 'save' this}}>save</button>
+  {{name}}
+  {{#if isEditing}}
+    <button {{action 'save' this}}>save</button>
+  {{else}}
+    <button {{action 'edit' this}}>edit</button>
+  {{/if}}
 </h3>
 
 {{#each mssiiLine in mssiiLines}}
@@ -9,10 +14,11 @@
         {{mssiiLine.adsTrack.name}}
       {{/link-to}}
       <div class="validity-date span">
-        {{date mssiiLine.start}}
+        <input type="text" class="input-small  datepicker" {{bind-attr value=mssiiLine.start disabled=isInputDisabled}} >
+
       </div>
       <div class="validity-date span">
-        {{date mssiiLine.end}}
+        <input type="text" class="input-small datepicker" {{bind-attr value=mssiiLine.end  disabled=isInputDisabled}} >
       </div>
       <div class="daily-validity span">
         {{#each day in mssiiLine.dow}}

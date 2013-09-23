@@ -103,8 +103,8 @@ App.MssiiLine = DS.Model.extend({
   adsTrack: DS.belongsTo('adsTrack'),
   mssii: DS.belongsTo('mssii'),
   dow: DS.attr('dow'),
-  start: DS.attr('date'),
-  end: DS.attr('date'),
+  start: DS.attr('string'),
+  end: DS.attr('string'),
   //evt
   hour: DS.attr('string'),
   //aut and local
@@ -123,7 +123,10 @@ App.Mssii = DS.Model.extend({
   //aut specific
   endValidity: DS.attr('date'),
   subType: DS.attr('string'), //window or timer
-  windowSize: DS.attr('number')
+  windowSize: DS.attr('number'),
+  isInputDisabled: function(){
+    return !this.get('isEditing');
+  }.property('isEditing')
 });
 
 
