@@ -1,3 +1,4 @@
+/*globals Em, moment*/
 require('bower_components/moment/moment');
 require('bower_components/MomentDatepicker/moment-datepicker/moment-datepicker');
 require('bower_components/ember-data-shim/ember-data-canary-build');

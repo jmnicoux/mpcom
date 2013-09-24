@@ -1,5 +1,21 @@
-App.ApplicationController = Em.ArrayController.extend();
+/*globals Em, $*/
 
+App.ApplicationController = Em.ArrayController.extend({
+  needs: ["modules"],
+  modules: Em.computed.alias("controllers.modules"),
+});
+
+App.ModulesController = Em.ArrayController.extend();
+
+App.ModuleController = Em.ObjectController.extend({
+  needs: ["submodules"],
+  submodules: Em.computed.alias("controllers.submodules"),
+});
+
+App.MusicController = App.ModuleController.extend();
+App.AdsController = App.ModuleController.extend();
+
+App.SubmodulesController = Em.ArrayController.extend();
 
 App.MssiiController = Em.ObjectController.extend({
   needs: ["mssiiLines"],

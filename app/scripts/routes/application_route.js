@@ -1,42 +1,16 @@
+/*globals Em*/
 App.ApplicationRoute = Em.Route.extend({
 
-  retry : function (promise, retryCallback, nTimes) {
-    var self = this;
-    return promise.then(null, function(reason) {
-      if (nTimes-- > 0) {
-        return self.retry(retryCallback(), retryCallback, nTimes);
-      }
-      throw reason;
-    });
-  },
-
-  getModules: function () {
-    //console.log('loading modules');
-    return this.store.findAll('module').then(function (modules) {
-      return modules;
-    });
-  },
-
   model: function() {
-    //var self = this; return new Ember.RSVP.Promise(function(resolve) { Em.run.later(function() { resolve( self.store.find('module') );}, 5000); });
-    /*
-    return this.store.find('module').then(function (modules) {
+    var store = this.get('store');
+    return store.findAll('module').then(function (modules) {
       return modules;
     });
-    */
-    var self = this;
-    //return this.retry(self.getModules(), function () {
-      return self.getModules();
-    //}, 3);
-    //return this.getModules();
   },
-
-  actions: {
-    error: function() {
-      this.transitionTo('index');
-    }
+  afterModel: function(models){
+    var modulesController = this.controllerFor('modules');
+    modulesController.set('content', models);
   },
-
   renderTemplate: function() {
     this.render('application');
     this.render('navigation', {
@@ -53,9 +27,9 @@ App.ApplicationRoute = Em.Route.extend({
 });
 
 App.IndexRoute = Ember.Route.extend({
-  redirect: function() {
-    this.transitionTo('playlist');
-  }
+  //redirect: function() {
+  //  this.transitionTo('music');
+  //}
 });
 
 
@@ -68,77 +42,43 @@ App.SubmoduleRoute = Em.Route.extend({
   }
 });
 
+App.ModuleRoute = Em.Route.extend({
+  model: function() {
+    return this.store.find('module', this.routeName).then(function (module) {
+      return module;
+    });
+  },
+  afterModel: function(model){
+    this.controllerFor('module').set('content', model);
+    var submodulesController = this.controllerFor('submodules');
+    submodulesController.set('content', model.get('submodules'));
+  },
+  renderTemplate: function(controller, model) {
+    this.render('module', {
+      outlet: 'module',
+      into: 'application',
+      controller: 'module'
+    });
+  }
+});
 
-App.MusicRoute = Em.Route.extend({
-  model: function() {
-    return this.store.find('module', 'music').then(function (module) {
-      return module;
-    });
-  },
-  renderTemplate: function(controller, model) {
-    this.render('module', {
-      outlet: 'module',
-      into: 'application',
-      controller: 'music'
-    });
-  }
+App.MusicRoute = App.ModuleRoute.extend();
+App.MusicIndexRoute = Em.Route.extend({
+  //redirect: function() {
+  //  this.transitionTo('playlist');
+  //}
 });
-App.AdsRoute = Em.Route.extend({
-  model: function() {
-    return this.store.find('module', 'ads').then(function (module) {
-      return module;
-    });
-  },
-  renderTemplate: function(controller, model) {
-    this.render('module', {
-      outlet: 'module',
-      into: 'application',
-      controller: 'ads'
-    });
-  }
+
+
+App.AdsRoute = App.ModuleRoute.extend();
+App.AdsIndexRoute = Em.Route.extend({
+  //redirect: function() {
+  //  this.transitionTo('planning');
+  //}
 });
-App.SettingsRoute = Em.Route.extend({
-  model: function() {
-    return this.store.find('module', 'settings').then(function (module) {
-      return module;
-    });
-  },
-  renderTemplate: function(controller, model) {
-    this.render('module', {
-      outlet: 'module',
-      into: 'application',
-      controller: 'settings'
-    });
-  }
-});
-App.MaintenanceRoute = Em.Route.extend({
-  model: function() {
-    return this.store.find('module', 'maintenance').then(function (module) {
-      return module;
-    });
-  },
-  renderTemplate: function(controller, model) {
-    this.render('module', {
-      outlet: 'module',
-      into: 'application',
-      controller: 'maintenance'
-    });
-  }
-});
-App.HelpRoute = Em.Route.extend({
-  model: function() {
-    return this.store.find('module', 'help').then(function (module) {
-      return module;
-    });
-  },
-  renderTemplate: function(controller, model) {
-    this.render('module', {
-      outlet: 'module',
-      into: 'application',
-      controller: 'help'
-    });
-  }
-});
+App.SettingsRoute = App.ModuleRoute.extend();
+App.MaintenanceRoute = App.ModuleRoute.extend();
+App.HelpRoute = App.ModuleRoute.extend();
 
 
 

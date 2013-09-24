@@ -1,9 +1,9 @@
 <div class="navbar row">
   <ul id="submodule-nav" class="nav">
-    {{#each item in submodules}}
+    {{#each submodule in submodules}}
       <li>
-        {{#link-to item.id}}
-          {{item.name}}
+        {{#link-to submodule.id}}
+          {{submodule.name}}
         {{/link-to}}
       </li>
     {{/each}}
