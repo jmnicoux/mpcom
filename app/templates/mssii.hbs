@@ -10,11 +10,11 @@
 {{#each mssiiLine in mssiiLines}}
   <div class="box prg-line">
     <div class="row">
-      {{#link-to 'adsTrack' mssiiLine.adsTrack.id tagName="div" class="span2"}}
+      {{#link-to 'adsTrack' mssiiLine.adsTrack tagName="div" class="span2"}}
         {{mssiiLine.adsTrack.name}}
       {{/link-to}}
       <div class="validity-date span">
-        <input type="text" class="input-small  datepicker" {{bind-attr value=mssiiLine.start disabled=isInputDisabled}} >
+        <input type="text" class="input-small datepicker" {{bind-attr value=mssiiLine.start disabled=isInputDisabled}} >
 
       </div>
       <div class="validity-date span">
@@ -25,6 +25,11 @@
           <span  {{bind-attr class="day:label day.active:label-info"}} {{action 'toggleState' day}}>
             {{day.name}}
           </span>
+        {{/each}}
+      </div>
+      <div class="qh-validity span offset1">
+        {{#each qh in mssiiLine.qh}}
+          <span {{bind-attr class="qh:qh qh.active:active"}} {{action 'toggleState' qh}}>&nbsp</span>
         {{/each}}
       </div>
 

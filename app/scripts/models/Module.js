@@ -108,7 +108,7 @@ App.MssiiLine = DS.Model.extend({
   //evt
   hour: DS.attr('string'),
   //aut and local
-  qh: DS.attr('string'), //TODO : add associated transform
+  qh: DS.attr('qh'),
   //local
   frq: DS.attr('number')
 });

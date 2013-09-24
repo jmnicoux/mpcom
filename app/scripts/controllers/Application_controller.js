@@ -41,3 +41,4 @@ App.MssiiController = Em.ObjectController.extend({
 
 App.MssiiLinesController = Em.ArrayController.extend();
 App.AdsTracksIndexController = Em.ArrayController.extend();
+App.AdsTracksController = Em.ArrayController.extend();

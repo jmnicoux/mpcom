@@ -122,8 +122,23 @@ html, body {
   font-size: 11px;
 }
 
+.qh-validity :nth-child(4n+3) {
+  border-left: 1px solid #DDD;
+}
 
+.qh {
+  display: inline-block;
+  min-width: 6px;
+  margin-right: -4px;
+  padding: 2px 0px;
+  line-height: 14px;
+  vertical-align: baseline;
+  background-color: #999;
+}
 
+.qh.active {
+  background-color: #3A87AD;
+}
 
 
 

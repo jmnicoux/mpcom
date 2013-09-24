@@ -33,3 +33,13 @@ require('scripts/controllers/*');
 require('scripts/routes/*');
 require('scripts/adapters/*');
 require('scripts/router');
+
+
+String.prototype.pad= function(len, c){
+  var s = this;
+  if ( !c ){
+    c = '0';
+  }
+  while(s.length< len) s= c+ s;
+  return s;
+};
