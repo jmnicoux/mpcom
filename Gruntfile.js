@@ -64,7 +64,7 @@ module.exports = function (grunt) {
             options: {
                 port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: '127.0.0.1'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -354,7 +354,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
@@ -363,7 +363,6 @@ module.exports = function (grunt) {
             'concurrent:server',
             'neuter:app',
             'connect:livereload',
-            'open',
             'watch'
         ]);
     });
