@@ -27,9 +27,9 @@ App.ApplicationRoute = Em.Route.extend({
 });
 
 App.IndexRoute = Ember.Route.extend({
-  //redirect: function() {
-  //  this.transitionTo('music');
-  //}
+  redirect: function() {
+    this.transitionTo('music');
+  }
 });
 
 
